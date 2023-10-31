@@ -1,0 +1,32 @@
+{
+    "name": "sgtcoder/laravel-payments",
+    "description": "A simple way to manage your subscriptions and payments.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Michael J Brancato",
+            "email": "usmccoder@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "SgtCoder\\LaravelPayments\\": "src"
+        },
+        "files": [
+            "src/Helpers/Functions.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SgtCoder\\LaravelPayments\\LaravelPaymentsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
