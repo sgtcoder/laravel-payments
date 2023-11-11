@@ -1,30 +1,60 @@
 {
     "name": "sgtcoder/laravel-payments",
-    "description": "A simple way to manage your subscriptions and payments.",
-    "type": "project",
+    "description": "A normalized way to manage payments and subscriptions from multiple different payment platforms.",
+    "keywords": [
+        "sgtcoder",
+        "laravel",
+        "laravel-payments"
+    ],
+    "homepage": "https://github.com/sgtcoder/laravel-payments",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Michael J Brancato",
-            "email": "usmccoder@gmail.com"
+            "name": "sgtcoder",
+            "email": "usmccoder@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "spatie/laravel-package-tools": "1.*",
+        "illuminate/contracts": "10.*"
     },
-    "require-dev": {},
+    "require-dev": {
+        "nunomaduro/collision": "^7.8",
+        "nunomaduro/larastan": "^2.0.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0"
+    },
     "autoload": {
         "psr-4": {
-            "SgtCoder\\LaravelPayments\\": "src"
+            "SgtCoder\\LaravelPayments\\": "src/"
         },
         "files": [
             "src/Helpers/Functions.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {}
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "SgtCoder\\LaravelPayments\\LaravelPaymentsServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "LaravelPayments": "SgtCoder\\LaravelPayments\\Facades\\LaravelPayments"
+            }
         }
     },
     "minimum-stability": "dev",
