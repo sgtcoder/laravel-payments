@@ -36,6 +36,15 @@ A normalized way to manage payments and subscriptions from multiple different pa
 composer update
 ```
 
+## Publish Package ##
+> Publishes config files and services
+```
+php artisan vendor:publish --provider="SgtCoder\LaravelPayments\LaravelPaymentsServiceProvider" --tag authnet
+php artisan vendor:publish --provider="SgtCoder\LaravelPayments\LaravelPaymentsServiceProvider" --tag elavon
+php artisan vendor:publish --provider="SgtCoder\LaravelPayments\LaravelPaymentsServiceProvider" --tag payeezy
+php artisan vendor:publish --provider="SgtCoder\LaravelPayments\LaravelPaymentsServiceProvider" --tag stripe
+```
+
 ## Usage ##
 
 ## Credits ##
