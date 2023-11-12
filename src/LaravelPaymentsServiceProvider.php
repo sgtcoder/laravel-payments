@@ -18,8 +18,27 @@ class LaravelPaymentsServiceProvider extends PackageServiceProvider
             ->name('laravel-payments')
             ->hasConfigFile('laravel-payments');
 
-        if ($this->app->runningInConsole()) {
-            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        }
+        // Migrations
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
+        // Authnet
+        $this->publishes([
+            __DIR__ . '/Services/AuthNetService.php' => app_path('Services/AuthNetService.php')
+        ], 'authnet');
+
+        // Elavon
+        $this->publishes([
+            __DIR__ . '/Services/ElavonService.php' => app_path('Services/ElavonService.php')
+        ], 'elavon');
+
+        // Payeezy
+        $this->publishes([
+            __DIR__ . '/Services/PayeezyService.php' => app_path('Services/PayeezyService.php')
+        ], 'payeezy');
+
+        // Stripe
+        $this->publishes([
+            __DIR__ . '/Services/StripeService.php' => app_path('Services/StripeService.php')
+        ], 'stripe');
     }
 }
