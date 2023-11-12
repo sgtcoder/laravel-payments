@@ -39,10 +39,10 @@ composer update
 ## Publish Package ##
 > Publishes config files and services
 ```
-php artisan vendor:publish --provider="SgtCoder\LaravelPayments\LaravelPaymentsServiceProvider" --tag authnet
-php artisan vendor:publish --provider="SgtCoder\LaravelPayments\LaravelPaymentsServiceProvider" --tag elavon
-php artisan vendor:publish --provider="SgtCoder\LaravelPayments\LaravelPaymentsServiceProvider" --tag payeezy
-php artisan vendor:publish --provider="SgtCoder\LaravelPayments\LaravelPaymentsServiceProvider" --tag stripe
+php artisan vendor:publish --tag laravel-payments-authnet
+php artisan vendor:publish --tag laravel-payments-elavon
+php artisan vendor:publish --tag laravel-payments-payeezy
+php artisan vendor:publish --tag laravel-payments-stripe
 ```
 
 ## Usage ##
