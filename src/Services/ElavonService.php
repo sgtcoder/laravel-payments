@@ -98,7 +98,7 @@ class ElavonService
         $data['amount'] = $data['amount'] ?? 0.00;
         $payment_type = $data['payment_type'] ?? 'waived_payment';
         $merchant_ref = $data['merchant_ref'];
-        $amount = bcmul($data['amount'], 100);
+        $amount = bcmul($data['amount'], '100');
 
         $payment_data = [
             'model_id' => $model->id,

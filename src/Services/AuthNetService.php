@@ -11,7 +11,7 @@ class AuthNetService
     {
         $payment_type = $data['payment_type'] ?? 'one_time';
         $merchant_ref = $data['merchant_ref'];
-        $amount = bcmul($data['amount'], 100);
+        $amount = bcmul($data['amount'], '100');
         $cardholder_first_name = $data['firstName'];
         $cardholder_last_name = $data['lastName'];
         $cardholder_name = $cardholder_first_name . ' ' . $cardholder_last_name;
@@ -119,7 +119,7 @@ class AuthNetService
 
         $payment_type = $data['payment_type'] ?? 'recurring';
         $merchant_ref = $data['merchant_ref'];
-        $amount = bcmul($data['amount'], 100);
+        $amount = bcmul($data['amount'], '100');
         $cardholder_name = $payment_profile->cardholder_name;
         $exp_date = $payment_profile->exp_date;
         $card_type = $payment_profile->card_type;
@@ -249,7 +249,7 @@ class AuthNetService
         $data['amount'] = $data['amount'] ?? 0.00;
         $payment_type = $data['payment_type'] ?? 'waived_payment';
         $merchant_ref = $data['merchant_ref'];
-        $amount = bcmul($data['amount'], 100);
+        $amount = bcmul($data['amount'], '100');
 
         $payment_data = [
             'model_id' => $model->id,
